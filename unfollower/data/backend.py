@@ -32,7 +32,7 @@ class unfollower(QtWidgets.QMainWindow, unfollower.Ui_MainWindow):
         self.url.setPlainText(getURL())
         self.followBtn.clicked.connect(self.unfollow)
         self.stopBtn.clicked.connect(self.stop)
-        #self.closeBtn.clicked.connect(self.close)
+        self.exitBtn.clicked.connect(self.exit)
 
     def unfollow(self):
         #Authenicate using pin
@@ -93,9 +93,9 @@ class unfollower(QtWidgets.QMainWindow, unfollower.Ui_MainWindow):
         self.home()
 
     def stop(self):
-        print("Stopping!")
+        print("STOP!")
 
-    def close(self):
+    def exit(self):
         sys.exit()
 
 def main():
