@@ -7,8 +7,8 @@ Please read the following in order to better understand how to properly use Twit
 * __Fields__
    * `Verification URL:` For your first time use, copy the link into your browser and follow the instructions in order to obtain your verification PIN.
    * `PIN:` The PIN gathered from the verification URL. The PIN is only needed upon first use, or additional token generation.
-   * `Amount:` The amount to be followed/unfollowed, depending on choice.
-   * `Target:` Used in the follow command. 
+   * `Amount:` The amount to be followed/unfollowed, depending on choice. (Integers only)
+   * `Target:` Used in the follow command. Specifies the twitter user to be followed. (Do <b>NOT</b> use '@' character)
    
 * __Tokens__
    * Access tokens are stored in a `tokens.txt` text file. 
