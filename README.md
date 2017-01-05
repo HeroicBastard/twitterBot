@@ -2,6 +2,8 @@
 A series of automation scipts written in Python by [Michael Sterpka](https://github.com/michaelsterpka).
 
 ###Use Guide
+Please read the following in order to better understand how to properly use TwitterBot.
+
 * __Fields__
    * `Verification URL:` For your first time use, copy the link into your browser and follow the instructions in order to obtain your verification PIN.
    * `PIN:` The PIN gathered from the verification URL. The PIN is only needed upon first use, or additional token generation.
