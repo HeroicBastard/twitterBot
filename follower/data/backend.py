@@ -22,7 +22,6 @@ class follower(QtWidgets.QMainWindow, follower.Ui_MainWindow):
     def __init__(self, parent=None):
         super(follower, self).__init__(parent)
         self.setupUi(self)
-
         self.home()
 
     def home(self):
@@ -56,6 +55,7 @@ class follower(QtWidgets.QMainWindow, follower.Ui_MainWindow):
         followed = 0
         count = 0
         for follow in target_followers:
+            QtCore.QCoreApplication.processEvents()
             if followed >= int(followAmount): 
                 break
             current_screen_name = api.get_user(follow).screen_name
@@ -72,7 +72,6 @@ class follower(QtWidgets.QMainWindow, follower.Ui_MainWindow):
 
             #update progress bar
             fill = followed / int(followAmount) * 100
-            print(fill)
             self.progressBar.setValue(followed/int(followAmount) * 100)
             self.show()
 

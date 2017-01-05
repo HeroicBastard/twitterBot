@@ -16,10 +16,9 @@ def getURL():
     try:
         redirect_url = auth.get_authorization_url()
         print("\n" + redirect_url + "\n")
-        return redirect_url
     except:
         print("broken token")
-        return redirect_url
+    return redirect_url
 
 #UI class
 class unfollower(QtWidgets.QMainWindow, unfollower.Ui_MainWindow):
@@ -52,6 +51,7 @@ class unfollower(QtWidgets.QMainWindow, unfollower.Ui_MainWindow):
         unfollowAmount = self.unfollowLine.text()
         skipMutuals = self.skipMutuals.isChecked()
         stableMode = self.stableMode.isChecked()
+        print(stableMode)
 
         #follow function
         unfollowed = 0
@@ -81,7 +81,6 @@ class unfollower(QtWidgets.QMainWindow, unfollower.Ui_MainWindow):
 
             #update progress bar
             fill = unfollowed / int(unfollowAmount) * 100
-            print(fill)
             self.progressBar.setValue(fill)
             self.show()
 
