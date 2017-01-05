@@ -11,7 +11,8 @@ Please read the following in order to better understand how to properly use Twit
    * `Target:` Used in the follow command. 
    
 * __Tokens__
-   * Access tokens are stored in a `tokens.txt` text file. If you have an issue authenticating your account, delete the tokens file and re-follow the steps to authenticate your account. 
+   * Access tokens are stored in a `tokens.txt` text file. 
+   * If you have an issue authenticating your account, delete the tokens file and re-follow the steps to authenticate your account. 
    
 ###Commands
 
