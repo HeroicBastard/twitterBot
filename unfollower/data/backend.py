@@ -1,4 +1,3 @@
-from requests import request
 from PyQt5 import QtCore, QtGui, QtWidgets
 import tweepy
 import unfollower
