@@ -37,18 +37,26 @@ class follower(QtWidgets.QMainWindow, follower.Ui_MainWindow):
         access_secret = auth.access_token_secret
 
         TokenFileName = 'tokens.txt'
-        TokenDataFile = open(TokenDataFile, 'w')
+        TokenDataFile = open(TokenFileName, 'w')
         TokenDataFile.write(access_token+'\n')
         TokenDataFile.write(access_secret+'\n')
 
 
     def follow(self):
         #Authenicate using pin
-        verifier = self.pinLine.text()
-        auth.get_access_token(verifier)
-        access_token = auth.access_token
-        access_secret = auth.access_token_secret
-        print(access_token, access_secret)
+        access_token = ''
+        access_secret = ''
+        if not os.path.isfile('tokens.txt'):
+            self.login()
+
+        TokenDataFile = open('tokens.txt', 'r')
+        for i, line in enumerate(TokenDataFile):
+            if i == 0:
+                access_token = line.rstrip()
+                print(access_token)
+            if i == 1:
+                access_secret = line.rstrip()
+                print(access_secret)
         auth.set_access_token(access_token, access_secret)
         api = tweepy.API(auth)
 
@@ -71,6 +79,8 @@ class follower(QtWidgets.QMainWindow, follower.Ui_MainWindow):
             QtCore.QCoreApplication.processEvents()
             if followed >= int(followAmount): 
                 break
+            if requested >= int(followAmount) / 4:
+                break
             current_screen_name = api.get_user(follow).screen_name
             try:
                 api.create_friendship(my_id, follow)
@@ -81,6 +91,7 @@ class follower(QtWidgets.QMainWindow, follower.Ui_MainWindow):
             except:
                 print('Already requested %s' % current_screen_name)
                 target_followers.remove(follow)
+                requested+=1
                 count+=1
 
             #update progress bar
