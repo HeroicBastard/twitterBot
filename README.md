@@ -8,8 +8,10 @@ A series of automation scipts written in Python by [Michael Sterpka](https://git
   
   
 * <b>Unfollow</b> - Allows for the unfollowing of already followed users. 
+  
   <b>Required:</b>
   * `Amount:` The amount to be unfollowed.
+  
   <b>Optional:</b>
   * `Stable Mode:` Implements a random sleep timer in order to reduce the chance of a `RateLimitError`.
   * `Skip Mutual Followers:` Only unfollows users who are <b>not</b> following you back. 
