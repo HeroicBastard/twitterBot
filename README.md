@@ -6,7 +6,7 @@ A series of automation scipts written in Python by [Michael Sterpka](https://git
   * `Skip Mutual Followers:` Only unfollows users who are <b>not</b> following you back. 
 
 ###Notice
-Rapid following and unfollowing of users is against [Twitter's Terms of Service](https://twitter.com/tos?lang=en) and may result in either an account closure or suspension. Please be weary when spam (un)following. By using this application, you aknowledge that all responsibility falls on the user.
+Rapid following and unfollowing of users is against [Twitter's Terms of Service](https://twitter.com/tos?lang=en) and may result in either an account closure or suspension. Please be weary when spam (un)following. By using this application, you aknowledge the risks and consequences.
 
 ###Libraries
 A few public libraries were used to make this project possible. Thank you to the following:
