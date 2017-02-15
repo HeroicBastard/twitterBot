@@ -7,8 +7,11 @@ import random
 import time
 import os
 
+consumer_key = 'dQOAl3jdLZWqvvbustAdVL3pB'
+consumer_secret = 'hNiLxOz7qHAQArWOUNEkpxOedDyiVydzeRqFO60qKZ5uS9U1i1'
+
 #app end authentication
-auth = tweepy.OAuthHandler("Z0ERs8DxYlYdwf8P8m6lhnn5y", "1ZFVR8qz9t1CJ54wigHkAQH2jZAE6z0Ou6vP0Ydt8fZgsJYusU")
+auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 
 # Redirect user to Twitter to authorize
 try:
@@ -55,7 +58,7 @@ class twitterbot(QtWidgets.QMainWindow, twitterbot.Ui_TwitterBot):
         access_token = ''
         access_secret = ''
         if not os.path.isfile('tokens.txt'):
-            self.login()
+        	self.login()
 
         #Login using token data
         TokenDataFile = open('tokens.txt', 'r')
@@ -179,6 +182,8 @@ class twitterbot(QtWidgets.QMainWindow, twitterbot.Ui_TwitterBot):
             fill = followed / int(followAmount) * 100
             self.progressBar.setValue(followed/int(followAmount) * 100)
             self.show()
+
+            #self.amountLine.setPlainText(followAmount-followed)
 
             #random sleep to avoid detection
             sleep = random.uniform(1.0, 1.7)
